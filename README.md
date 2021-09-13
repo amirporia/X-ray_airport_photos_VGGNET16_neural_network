@@ -16,5 +16,3 @@ Introduction:
   Usually, it is difficult to collect enough X-ray images containing the prohibited items with great variations in pose and scale. The insufficiency of training images actually     results in a great difficulty for developing reliable deepbased approaches suitable for prohibited item detection.
 sources that were taken :
   - BOOK , deep learning with python , François Chollet
-  - journals : 
-    - 
