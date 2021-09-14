@@ -1,0 +1,55 @@
+A Convolutional Neural Network (CNN, or ConvNet) are a special kind of multi-layer neural networks, designed to recognize visual patterns directly from pixel images
+with minimal preprocessing.. The ImageNet project is a large visual database designed for use in visual object recognition software research.
+The ImageNet project runs an annual software contest, the ImageNet Large Scale Visual Recognition Challenge (ILSVRC), where software programs compete to
+correctly classify and detect objects and scenes. Here I will talk about CNN architectures of ILSVRC top competitors .
+
+
+LeNet-5 (1998)
+LeNet-5, a pioneering 7-level convolutional network by LeCun et al in 1998, that classifies digits, was applied by several banks to recognise hand-written
+numbers on checks (cheques) digitized in 32x32 pixel greyscale inputimages. The ability to process higher resolution images requires larger and more convolutional layers,
+so this technique is constrained by the availability of computing resources.
+
+
+AlexNet (2012)
+In 2012, AlexNet significantly outperformed all the prior competitors and won the challenge by reducing the top-5 error from 26% to 15.3%. The second place top-5 error rate,
+which was not a CNN variation, was around 26.2%.
+The network had a very similar architecture as LeNet by Yann LeCun et al but was deeper, with more filters per layer, and with stacked convolutional layers. 
+It consisted 11x11, 5x5,3x3, convolutions, max pooling, dropout, data augmentation, ReLU activations, SGD with momentum. It attached ReLU activations after 
+every convolutional and fully-connected layer. AlexNet was trained for 6 days simultaneously on two Nvidia Geforce GTX 580 GPUs which is the reason for why their network
+is split into two pipelines. AlexNet was designed by the SuperVision group, consisting of Alex Krizhevsky, Geoffrey Hinton, and Ilya Sutskever.
+
+
+
+ZFNet(2013)
+Not surprisingly, the ILSVRC 2013 winner was also a CNN which became known as ZFNet. It achieved a top-5 error rate of 14.8% which is now already half of the 
+prior mentioned non-neural error rate. It was mostly an achievement by tweaking the hyper-parameters of AlexNet while maintaining the same structure with additional 
+Deep Learning elements as discussed earlier in this essay.
+
+
+
+GoogLeNet/Inception(2014)
+The winner of the ILSVRC 2014 competition was GoogLeNet(a.k.a. Inception V1) from Google. It achieved a top-5 error rate of 6.67%! This was very close to
+human level performance which the organisers of the challenge were now forced to evaluate. As it turns out, this was actually rather hard to do and required some human training
+in order to beat GoogLeNets accuracy. After a few days of training, the human expert (Andrej Karpathy) was able to achieve a top-5 error rate of 5.1%(single model)
+and 3.6%(ensemble). The network used a CNN inspired by LeNet but implemented a novel element which is dubbed an inception module. It used batch normalization, image distortions
+and RMSprop. This module is based on several very small convolutions in order to drastically reduce the number of parameters. Their architecture 
+consisted of a 22 layer deep CNN but reduced the number of parameters from 60 million (AlexNet) to 4 million.
+
+
+
+VGGNet (2014)
+The runner-up at the ILSVRC 2014 competition is dubbed VGGNet by the community and was developed by Simonyan and Zisserman. VGGNet consists of 16 convolutional layers
+and is very appealing because of its very uniform architecture. Similar to AlexNet, only 3x3 convolutions, but lots of filters. Trained on 4 GPUs for 2–3 weeks. 
+It is currently the most preferred choice in the community for extracting features from images. The weight configuration of the VGGNet is publicly available and
+has been used in many other applications and challenges as a baseline feature extractor. However, VGGNet consists of 138 million parameters, which can be a bit challenging
+to handle.
+
+
+ResNet(2015)
+At last, at the ILSVRC 2015, the so-called Residual Neural Network (ResNet) by Kaiming He et al introduced anovel architecture with “skip connections”
+and features heavy batch normalization. Such skip connections are also known as gated units or gated recurrent units and
+have a strong similarity to recent successful elements applied in RNNs. Thanks to this technique they were able to train a NN with 152 layers while still having lower complexity
+than VGGNet. It achieves a top-5 error rate of 3.57% which beats human-level performance on this dataset.
+
+
+AlexNet has parallel two CNN line trained on two GPUs with cross-connections, GoogleNet has inception modules ,ResNet has residual connections.
